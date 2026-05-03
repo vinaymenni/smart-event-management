@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/layout :: head('Calendar View')}"></head>
+
+<body class="dashboard-body">
+
+    <th:block th:replace="~{fragments/layout :: student-nav(${student})}"></th:block>
+
+    <main class="main-content">
+        <div class="page-header" style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px">
+            <div>
+                <h1><i class="fas fa-calendar-week"></i> Calendar View</h1>
+                <p class="page-subtitle">Monthly calendar of upcoming events.</p>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <a class="btn-secondary"
+                    th:href="@{/student/calendar(year=${month == 1 ? year-1 : year}, month=${month == 1 ? 12 : month-1})}">
+                    <i class="fas fa-chevron-left"></i> Prev
+                </a>
+                <a class="btn-secondary"
+                    th:href="@{/student/calendar(year=${month == 12 ? year+1 : year}, month=${month == 12 ? 1 : month+1})}">
+                    Next <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="table-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px">
+                <h2 style="margin:0" th:text="${monthName + ' ' + year}">May 2026</h2>
+                <a class="btn-secondary" th:href="@{/student/events}"><i class="fas fa-list"></i> Browse Events</a>
+            </div>
+
+            <div class="calendar-grid">
+                <div class="cal-dow" th:each="d : ${dow}"
+                    th:text="${d.getDisplayName(T(java.time.format.TextStyle).SHORT, T(java.util.Locale).ENGLISH)}">
+                    Mon
+                </div>
+
+                <div th:each="week : ${weeks}" class="cal-week">
+                    <div th:each="day : ${week}"
+                        th:class="${'cal-day' + (day.monthValue != month ? ' cal-day-out' : '') + (day.equals(today) ? ' cal-day-today' : '')}">
+                        <div class="cal-day-num" th:text="${day.dayOfMonth}">1</div>
+                        <div class="cal-events"
+                            th:with="key=${day.toString()}, list=${eventsByDate[key]}">
+                            <a th:each="e : ${list}" th:href="@{/student/events/{id}(id=${e.id})}" class="cal-event">
+                                <span th:text="${e.title}">Event</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="no-content" th:if="${eventsByDate.isEmpty()}">
+                <i class="fas fa-calendar-times"></i>
+                <p>No events scheduled this month.</p>
+            </div>
+        </div>
+    </main>
+
+    <script th:src="@{/js/main.js}"></script>
+</body>
+
+</html>
+

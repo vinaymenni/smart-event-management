@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/layout :: head(${isEdit} ? 'Edit Event' : 'Create Event')}"></head>
+
+<body class="dashboard-body">
+
+    <th:block th:replace="~{fragments/layout :: admin-nav(${admin})}"></th:block>
+
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1 th:text="${isEdit} ? '✏️ Edit Event' : '➕ Create New Event'">Create Event</h1>
+                <p class="page-subtitle"
+                    th:text="${isEdit} ? 'Update event details below.' : 'Fill in the details to post a new campus event.'">
+                </p>
+            </div>
+            <a th:href="@{/admin/events}" class="btn-secondary"><i class="fas fa-arrow-left"></i> Back to Events</a>
+        </div>
+
+        <div class="form-card">
+            <form th:action="${isEdit} ? @{/admin/events/{id}/edit(id=${eventId})} : @{/admin/events/new}"
+                th:object="${eventDto}" method="post" class="event-form">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
+                <div class="form-section">
+                    <h3><i class="fas fa-info-circle"></i> Basic Information</h3>
+                    <div class="form-group">
+                        <label>Event Title *</label>
+                        <input type="text" th:field="*{title}" class="form-control"
+                            placeholder="e.g. National CodeSprint 2026" />
+                        <span class="field-error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea th:field="*{description}" class="form-control" rows="4"
+                            placeholder="Describe the event..."></textarea>
+                        <span class="field-error" th:if="${#fields.hasErrors('description')}"
+                            th:errors="*{description}"></span>
+                    </div>
+
+                    <div class="form-row-3">
+                        <div class="form-group">
+                            <label>Department *</label>
+                            <select th:field="*{department}" class="form-control">
+                                <option value="">-- Select --</option>
+                                <option th:each="dept : ${departments}" th:value="${dept.name()}"
+                                    th:text="${dept.displayName}"></option>
+                            </select>
+                            <span class="field-error" th:if="${#fields.hasErrors('department')}"
+                                th:errors="*{department}"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Event Type *</label>
+                            <select th:field="*{eventType}" class="form-control">
+                                <option value="">-- Select --</option>
+                                <option
+                                    th:each="t : ${ {'Workshop','Seminar','Technical','Cultural','Sports','Competition','Guest Lecture','Conference','Hackathon'} }"
+                                    th:value="${t}" th:text="${t}"></option>
+                            </select>
+                            <span class="field-error" th:if="${#fields.hasErrors('eventType')}"
+                                th:errors="*{eventType}"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Venue *</label>
+                            <input type="text" th:field="*{venue}" class="form-control"
+                                placeholder="e.g. CS Lab Block A" />
+                            <span class="field-error" th:if="${#fields.hasErrors('venue')}" th:errors="*{venue}"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="max-width:420px">
+                        <label>Event Timing</label>
+                        <input type="text" th:field="*{timing}" class="form-control"
+                            placeholder="e.g. 10:00 AM - 12:00 PM" />
+                        <span class="field-error" th:if="${#fields.hasErrors('timing')}" th:errors="*{timing}"></span>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3><i class="fas fa-calendar-alt"></i> Dates &amp; Seats</h3>
+                    <div class="form-row-3">
+                        <div class="form-group">
+                            <label>Start Date *</label>
+                            <input type="date" th:field="*{startDate}" class="form-control" />
+                            <span class="field-error" th:if="${#fields.hasErrors('startDate')}"
+                                th:errors="*{startDate}"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>End Date *</label>
+                            <input type="date" th:field="*{endDate}" class="form-control" />
+                            <span class="field-error" th:if="${#fields.hasErrors('endDate')}"
+                                th:errors="*{endDate}"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Date to Apply *</label>
+                            <input type="date" th:field="*{lastDateToApply}" class="form-control" />
+                            <span class="field-error" th:if="${#fields.hasErrors('lastDateToApply')}"
+                                th:errors="*{lastDateToApply}"></span>
+                        </div>
+                    </div>
+                    <div class="form-group" style="max-width:300px">
+                        <label>Seat Limit *</label>
+                        <input type="number" th:field="*{seatLimit}" class="form-control" min="1"
+                            placeholder="e.g. 100" />
+                        <span class="field-error" th:if="${#fields.hasErrors('seatLimit')}"
+                            th:errors="*{seatLimit}"></span>
+                    </div>
+                    <div class="form-row-3">
+                        <div class="form-group">
+                            <label>Min Team Size *</label>
+                            <select th:field="*{minTeamSize}" class="form-control">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                            <span class="field-error" th:if="${#fields.hasErrors('minTeamSize')}" th:errors="*{minTeamSize}"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Max Team Size *</label>
+                            <select th:field="*{maxTeamSize}" class="form-control">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                            <span class="field-error" th:if="${#fields.hasErrors('maxTeamSize')}" th:errors="*{maxTeamSize}"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">
+                        <i th:class="${isEdit} ? 'fas fa-save' : 'fas fa-paper-plane'"></i>
+                        <span th:text="${isEdit} ? 'Update Event' : 'Post Event'">Submit</span>
+                    </button>
+                    <a th:href="@{/admin/events}" class="btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script th:src="@{/js/main.js}"></script>
+</body>
+
+</html>

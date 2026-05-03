@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/layout :: head('My Registrations')}"></head>
+
+<body class="dashboard-body">
+
+    <th:block th:replace="~{fragments/layout :: student-nav(${student})}"></th:block>
+
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1><i class="fas fa-ticket-alt"></i> My Registrations</h1>
+                <p class="page-subtitle">Track all your event registrations and tickets.</p>
+            </div>
+        </div>
+
+        <div th:replace="~{fragments/layout :: flash-messages}"></div>
+
+        <div class="table-card">
+            <table class="data-table" th:if="${!#lists.isEmpty(registrations)}">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Event</th>
+                        <th>Department</th>
+                        <th>Date</th>
+                        <th>Ticket Code</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="reg, stat : ${registrations}">
+                        <td th:text="${stat.count}">1</td>
+                        <td>
+                            <a th:href="@{/student/events/{id}(id=${reg.event.id})}"
+                                th:text="${reg.event.title}">Event</a>
+                            <div class="sub-text" th:text="${reg.event.venue}">Venue</div>
+                        </td>
+                        <td><span class="dept-badge sm" th:text="${reg.event.department}">CSE</span></td>
+                        <td>
+                            <div th:text="${#temporals.format(reg.event.startDate,'dd MMM yyyy')}">Date</div>
+                            <div class="sub-text"
+                                th:text="'to ' + ${#temporals.format(reg.event.endDate,'dd MMM yyyy')}">-</div>
+                        </td>
+                        <td><code class="ticket-code" th:text="${reg.ticketCode}">TKT-XXXX</code></td>
+                        <td>
+                            <span class="status-pill"
+                                th:classappend="${reg.status.name() == 'REGISTERED'} ? 'pill-active' : 'pill-cancelled'"
+                                th:text="${reg.status}">Status</span>
+                        </td>
+                        <td>
+                            <div class="action-btns" th:if="${reg.status.name() == 'REGISTERED'}">
+                                <a th:if="${reg.event.status.name() == 'COMPLETED'}"
+                                    th:href="@{/student/registrations/{id}/certificate(id=${reg.id})}"
+                                    class="btn-view-sm" title="Download Certificate">
+                                    <i class="fas fa-award"></i>
+                                </a>
+                                <form th:action="@{/student/registrations/{id}/cancel(id=${reg.id})}" method="post"
+                                    onsubmit="return confirm('Cancel registration for this event?')">
+                                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                                    <button type="submit" class="btn-danger-sm">
+                                        <i class="fas fa-times"></i> Cancel
+                                    </button>
+                                </form>
+                            </div>
+                            <span th:if="${reg.status.name() == 'CANCELLED'}" class="text-muted">—</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div th:if="${#lists.isEmpty(registrations)}" class="no-content">
+                <i class="fas fa-ticket-alt"></i>
+                <p>You haven't registered for any events yet.</p>
+                <a th:href="@{/student/events}" class="btn-primary"><i class="fas fa-calendar-alt"></i> Browse
+                    Events</a>
+            </div>
+        </div>
+    </main>
+
+    <script th:src="@{/js/main.js}"></script>
+</body>
+
+</html>

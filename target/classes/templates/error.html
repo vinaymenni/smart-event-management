@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error | Smart Campus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+    <style>
+        .error-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #f8f9fa;
+        }
+
+        .error-box {
+            text-align: center;
+            padding: 3rem 4rem;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, .08);
+            max-width: 500px;
+        }
+
+        .error-code {
+            font-size: 6rem;
+            font-weight: 700;
+            color: #e2e8f0;
+            line-height: 1;
+        }
+
+        .error-icon {
+            font-size: 3.5rem;
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+
+        .error-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin: .5rem 0;
+        }
+
+        .error-msg {
+            color: #64748b;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-back {
+            padding: .75rem 1.5rem;
+            background: #1e293b;
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .btn-back:hover {
+            background: #0f172a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error-page">
+        <div class="error-box">
+            <div class="error-code" th:text="${errorCode ?: '500'}">500</div>
+            <div class="error-icon">
+                <i
+                    th:class="${errorCode == '404'} ? 'fas fa-search' : (${errorCode == '403'} ? 'fas fa-lock' : 'fas fa-exclamation-triangle')"></i>
+            </div>
+            <div class="error-title" th:text="${errorTitle ?: 'Something Went Wrong'}">Error</div>
+            <p class="error-msg" th:text="${errorMessage ?: 'An unexpected error occurred.'}">Error message</p>
+            <div class="error-actions">
+                <a href="javascript:history.back()" class="btn-back"><i class="fas fa-arrow-left"></i> Go Back</a>
+                <a th:href="@{/}" class="btn-back" style="background:#475569"><i class="fas fa-home"></i> Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

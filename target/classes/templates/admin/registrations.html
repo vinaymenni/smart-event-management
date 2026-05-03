@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/layout :: head('Registrations')}"></head>
+
+<body class="dashboard-body">
+
+    <th:block th:replace="~{fragments/layout :: admin-nav(${admin})}"></th:block>
+
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1><i class="fas fa-users"></i> Manage Registrations</h1>
+                <p class="page-subtitle">View registrations for any event.</p>
+            </div>
+        </div>
+
+        <div th:replace="~{fragments/layout :: flash-messages}"></div>
+
+        <!-- Event Selector -->
+        <div class="filter-card">
+            <form th:action="@{/admin/registrations}" method="get" class="filter-form">
+                <div class="filter-group" style="flex:1">
+                    <select name="eventId" class="form-control" id="event-selector">
+                        <option value="">-- Select an Event to View Registrations --</option>
+                        <option th:each="e : ${events}" th:value="${e.id}"
+                            th:text="${e.title + ' (' + #temporals.format(e.startDate,'dd MMM yyyy') + ')'}"
+                            th:selected="${selectedEvent != null and selectedEvent.id == e.id}">
+                        </option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary"><i class="fas fa-search"></i> View</button>
+            </form>
+        </div>
+
+        <!-- Registrations Table -->
+        <div th:if="${selectedEvent != null}">
+            <div class="section-header">
+                <h2>Registrations for: <em th:text="${selectedEvent.title}">Event</em></h2>
+                <span class="badge-count" th:text="${#lists.size(registrations)} + ' registrations'">0
+                    registrations</span>
+            </div>
+            <div class="table-card">
+                <table class="data-table" th:if="${!#lists.isEmpty(registrations)}">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Student Name</th>
+                            <th>Email</th>
+                            <th>Department</th>
+                            <th>Ticket Code</th>
+                            <th>Registered At</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="reg, stat : ${registrations}">
+                            <td th:text="${stat.count}">1</td>
+                            <td th:text="${reg.student.name}">Name</td>
+                            <td th:text="${reg.student.email}">email</td>
+                            <td><span class="dept-badge sm" th:text="${reg.student.department}">CSE</span></td>
+                            <td><code class="ticket-code" th:text="${reg.ticketCode}">TKT-XXXX</code></td>
+                            <td th:text="${#temporals.format(reg.registeredAt,'dd MMM yyyy HH:mm')}">Date</td>
+                            <td>
+                                <span class="status-pill"
+                                    th:classappend="${reg.status.name() == 'REGISTERED'} ? 'pill-active' : 'pill-cancelled'"
+                                    th:text="${reg.status}">Status</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div th:if="${#lists.isEmpty(registrations)}" class="no-content">
+                    <i class="fas fa-user-times"></i>
+                    <p>No registrations for this event yet.</p>
+                </div>
+            </div>
+        </div>
+
+        <div th:if="${selectedEvent == null}" class="no-content">
+            <i class="fas fa-mouse-pointer"></i>
+            <p>Select an event above to view its registrations.</p>
+        </div>
+    </main>
+
+    <script th:src="@{/js/main.js}"></script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/layout :: head('Student Dashboard')}"></head>
+
+<body class="dashboard-body">
+
+    <th:block th:replace="~{fragments/layout :: student-nav(${student})}"></th:block>
+
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1>Welcome back, <span th:text="${student.name}">Student</span>! 👋</h1>
+                <p class="page-subtitle">Here's what's happening on campus today.</p>
+            </div>
+            <a th:href="@{/student/events}" class="btn-primary">
+                <i class="fas fa-search"></i> Browse All Events
+            </a>
+        </div>
+
+        <div th:replace="~{fragments/layout :: flash-messages}"></div>
+
+        <!-- Stats Row -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="stat-info">
+                    <h3 th:text="${totalEvents}">0</h3>
+                    <p>Total Events</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-ticket-alt"></i></div>
+                <div class="stat-info">
+                    <h3 th:text="${myRegCount}">0</h3>
+                    <p>My Registrations</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-building"></i></div>
+                <div class="stat-info">
+                    <h3 th:text="${student.department != null ? student.department : 'N/A'}">CSE</h3>
+                    <p>Department</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Latest Events -->
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-calendar-alt"></i> Latest Events</h2>
+                    <a th:href="@{/student/events}" class="link-more">View All <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="event-cards-grid">
+                    <div th:each="event : ${events}" class="event-card">
+                        <div class="event-card-top">
+                            <span class="dept-badge" th:text="${event.department}">CSE</span>
+                            <span class="status-badge"
+                                th:classappend="${event.status != null and event.status.name() == 'UPCOMING'} ? 'status-upcoming' : (${event.status != null and event.status.name() == 'ONGOING'} ? 'status-ongoing' : 'status-completed')"
+                                th:text="${event.status}">UPCOMING</span>
+                        </div>
+                        <h3 class="event-title" th:text="${event.title}">Event Title</h3>
+                        <div class="event-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> <span
+                                    th:text="${event.venue}">Venue</span></span>
+                            <span><i class="fas fa-calendar"></i> <span
+                                    th:text="${#temporals.format(event.startDate, 'dd MMM yyyy')}">Date</span></span>
+                            <span><i class="fas fa-users"></i> <span
+                                    th:text="${(event.registeredCount ?: 0) + '/' + event.seatLimit}">0/100</span>
+                                seats</span>
+                        </div>
+                        <div class="event-reg-status">
+                            <span th:if="${event.registrationOpen}" class="reg-open"><i class="fas fa-circle"></i>
+                                Registration Open</span>
+                            <span th:unless="${event.registrationOpen}" class="reg-closed"><i class="fas fa-circle"></i>
+                                Registration Closed</span>
+                        </div>
+                        <a th:href="@{/student/events/{id}(id=${event.id})}" class="btn-card">View Details</a>
+                    </div>
+                    <div th:if="${#lists.isEmpty(events)}" class="no-content">
+                        <i class="fas fa-calendar-times"></i>
+                        <p>No events available yet. Check back soon!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Announcements -->
+            <div class="dashboard-section side-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-bullhorn"></i> Announcements</h2>
+                </div>
+                <div class="announcement-list">
+                    <div th:each="ann : ${announcements}" class="announcement-item">
+                        <div class="ann-title" th:text="${ann.title}">Title</div>
+                        <div class="ann-message" th:text="${ann.message}">Message</div>
+                        <div class="ann-date" th:text="${#temporals.format(ann.createdAt, 'dd MMM yyyy, HH:mm')}">Date
+                        </div>
+                    </div>
+                    <div th:if="${#lists.isEmpty(announcements)}" class="no-content">
+                        <i class="fas fa-bell-slash"></i>
+                        <p>No announcements yet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script th:src="@{/js/main.js}"></script>
+</body>
+
+</html>

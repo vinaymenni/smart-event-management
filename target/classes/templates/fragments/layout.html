@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:fragment="head(title)">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:text="${title} + ' | Smart Campus'">Smart Campus</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- ===== SIDEBAR NAV (Admin) ===== -->
+    <nav th:fragment="admin-nav(admin)" class="sidebar">
+        <div class="sidebar-brand">
+            <i class="fas fa-university"></i>
+            <span>SmartCampus</span>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a th:href="@{/admin/dashboard}">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/admin/events}">
+                    <i class="fas fa-calendar-alt"></i> Events
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/admin/registrations}">
+                    <i class="fas fa-users"></i> Registrations
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/admin/analytics}">
+                    <i class="fas fa-chart-bar"></i> Analytics
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/admin/announcements}">
+                    <i class="fas fa-bullhorn"></i> Announcements
+                </a>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <i class="fas fa-user-shield"></i>
+                <div>
+                    <span class="user-name" th:text="${admin.name}">Admin</span>
+                    <span class="user-role">Administrator</span>
+                </div>
+            </div>
+            <a th:href="@{/logout}" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </nav>
+
+    <!-- ===== SIDEBAR NAV (Student) ===== -->
+    <nav th:fragment="student-nav(student)" class="sidebar">
+        <div class="sidebar-brand">
+            <i class="fas fa-university"></i>
+            <span>SmartCampus</span>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a th:href="@{/student/dashboard}">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/student/events}">
+                    <i class="fas fa-calendar-alt"></i> Browse Events
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/student/calendar}">
+                    <i class="fas fa-calendar-week"></i> Calendar View
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/student/saved-events}">
+                    <i class="fas fa-bookmark"></i> Saved Events
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/student/my-registrations}">
+                    <i class="fas fa-ticket-alt"></i> My Registrations
+                </a>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <i class="fas fa-user-graduate"></i>
+                <div>
+                    <span class="user-name" th:text="${student.name}">Student</span>
+                    <span class="user-role" th:text="${student.department}">Department</span>
+                </div>
+            </div>
+            <a th:href="@{/logout}" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </nav>
+
+    <!-- Flash Message Fragment -->
+    <div th:fragment="flash-messages">
+        <div th:if="${successMsg}" class="alert alert-success">
+            <i class="fas fa-check-circle"></i>
+            <span th:text="${successMsg}"></span>
+        </div>
+        <div th:if="${errorMsg}" class="alert alert-danger">
+            <i class="fas fa-exclamation-circle"></i>
+            <span th:text="${errorMsg}"></span>
+        </div>
+    </div>
+
+</body>
+
+</html>

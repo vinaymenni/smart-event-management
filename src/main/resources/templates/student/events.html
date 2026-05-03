@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/layout :: head('Browse Events')}"></head>
+
+<body class="dashboard-body">
+
+    <th:block th:replace="~{fragments/layout :: student-nav(${student})}"></th:block>
+
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1><i class="fas fa-calendar-alt"></i> Browse Events</h1>
+                <p class="page-subtitle">Discover and register for upcoming campus events.</p>
+            </div>
+        </div>
+
+        <div th:replace="~{fragments/layout :: flash-messages}"></div>
+
+        <!-- Filter Bar -->
+        <div class="filter-card">
+            <form th:action="@{/student/events}" method="get" class="filter-form" id="filter-form">
+                <div class="filter-group">
+                    <input type="text" name="keyword" th:value="${keyword}" placeholder="Search events..."
+                        class="form-control" id="search-input" />
+                </div>
+                <div class="filter-group">
+                    <select name="department" class="form-control" id="dept-filter">
+                        <option value="">All Departments</option>
+                        <option th:each="dept : ${departments}" th:value="${dept.name()}" th:text="${dept.displayName}"
+                            th:selected="${dept.name() == department}">
+                        </option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <select name="eventType" class="form-control" id="type-filter">
+                        <option value="">All Types</option>
+                        <option
+                            th:each="type : ${ {'Workshop','Seminar','Technical','Cultural','Sports','Competition','Guest Lecture'} }"
+                            th:value="${type}" th:text="${type}" th:selected="${type == eventType}">
+                        </option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary"><i class="fas fa-search"></i> Search</button>
+                <a th:href="@{/student/events}" class="btn-secondary"><i class="fas fa-times"></i> Clear</a>
+            </form>
+        </div>
+
+        <!-- Pagination Info -->
+        <div class="results-info" th:if="${events.totalElements > 0}">
+            Showing <strong th:text="${events.numberOfElements}">0</strong> of
+            <strong th:text="${events.totalElements}">0</strong> events
+        </div>
+
+        <!-- Events Grid -->
+        <div class="event-cards-grid large-grid">
+            <div th:each="event : ${events.content}" class="event-card">
+                <div class="event-card-top">
+                    <span class="dept-badge" th:text="${event.department}">CSE</span>
+                    <div style="display:flex;gap:8px;align-items:center">
+                        <form th:if="${bookmarkedIds != null and bookmarkedIds.contains(event.id)}"
+                            th:action="@{/student/events/{id}/unbookmark(id=${event.id})}" method="post"
+                            title="Remove from saved">
+                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                            <button type="submit" class="icon-btn" aria-label="Unbookmark">
+                                <i class="fas fa-bookmark"></i>
+                            </button>
+                        </form>
+                        <form th:unless="${bookmarkedIds != null and bookmarkedIds.contains(event.id)}"
+                            th:action="@{/student/events/{id}/bookmark(id=${event.id})}" method="post" title="Save event">
+                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                            <button type="submit" class="icon-btn" aria-label="Bookmark">
+                                <i class="far fa-bookmark"></i>
+                            </button>
+                        </form>
+                    <span class="status-badge"
+                        th:classappend="${event.status.name() == 'UPCOMING'} ? 'status-upcoming' : (${event.status.name() == 'ONGOING'} ? 'status-ongoing' : 'status-completed')"
+                        th:text="${event.status}">Status</span>
+                    </div>
+                </div>
+                <h3 class="event-title" th:text="${event.title}">Event Title</h3>
+                <p class="event-desc" th:text="${#strings.abbreviate(event.description, 100)}">Description...</p>
+                <div class="event-meta">
+                    <span><i class="fas fa-map-marker-alt"></i> <span th:text="${event.venue}">Venue</span></span>
+                    <span><i class="fas fa-calendar-day"></i>
+                        <span th:text="${#temporals.format(event.startDate, 'dd MMM yyyy')}">Date</span>
+                        –
+                        <span th:text="${#temporals.format(event.endDate, 'dd MMM yyyy')}">Date</span>
+                    </span>
+                    <span th:if="${event.timing != null and !#strings.isEmpty(event.timing)}"><i class="fas fa-clock"></i>
+                        <span th:text="${event.timing}">10:00 AM</span>
+                    </span>
+                    <span><i class="fas fa-clock"></i> Apply by:
+                        <strong th:text="${#temporals.format(event.lastDateToApply, 'dd MMM yyyy')}">Date</strong>
+                    </span>
+                    <span><i class="fas fa-chair"></i>
+                        <span th:text="${event.availableSeats}">50</span> seats left
+                    </span>
+                </div>
+                <div class="event-type-tag" th:text="${event.eventType}">Workshop</div>
+                <a th:href="@{/student/events/{id}(id=${event.id})}" class="btn-card">
+                    <i class="fas fa-arrow-right"></i> View &amp; Register
+                </a>
+            </div>
+            <div th:if="${events.totalElements == 0}" class="no-content wide">
+                <i class="fas fa-search"></i>
+                <p>No events found matching your search.</p>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination" th:if="${totalPages > 1}">
+            <a th:if="${currentPage > 0}"
+                th:href="@{/student/events(page=${currentPage-1}, keyword=${keyword}, department=${department}, eventType=${eventType})}"
+                class="page-btn"><i class="fas fa-chevron-left"></i> Prev</a>
+            <span th:each="i : ${#numbers.sequence(0, totalPages - 1)}">
+                <a th:href="@{/student/events(page=${i}, keyword=${keyword}, department=${department}, eventType=${eventType})}"
+                    th:text="${i + 1}" th:classappend="${i == currentPage} ? 'page-btn active' : 'page-btn'"></a>
+            </span>
+            <a th:if="${currentPage < totalPages - 1}"
+                th:href="@{/student/events(page=${currentPage+1}, keyword=${keyword}, department=${department}, eventType=${eventType})}"
+                class="page-btn">Next <i class="fas fa-chevron-right"></i></a>
+        </div>
+    </main>
+
+    <script th:src="@{/js/main.js}"></script>
+</body>
+
+</html>

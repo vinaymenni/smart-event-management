@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.smartcampus.events.DashboardTest" time="9.516" tests="2" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\Kusuma\Downloads\smarteventsystem\target\test-classes;C:\Users\Kusuma\Downloads\smarteventsystem\target\classes;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.2.4\spring-boot-starter-web-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter\3.2.4\spring-boot-starter-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.2.4\spring-boot-starter-logging-3.2.4.jar;C:\Users\Kusuma\.m2\repository\ch\qos\logback\logback-classic\1.4.14\logback-classic-1.4.14.jar;C:\Users\Kusuma\.m2\repository\ch\qos\logback\logback-core\1.4.14\logback-core-1.4.14.jar;C:\Users\Kusuma\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.21.1\log4j-to-slf4j-2.21.1.jar;C:\Users\Kusuma\.m2\repository\org\apache\logging\log4j\log4j-api\2.21.1\log4j-api-2.21.1.jar;C:\Users\Kusuma\.m2\repository\org\slf4j\jul-to-slf4j\2.0.12\jul-to-slf4j-2.0.12.jar;C:\Users\Kusuma\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\Kusuma\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.2.4\spring-boot-starter-json-3.2.4.jar;C:\Users\Kusuma\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.4\jackson-databind-2.15.4.jar;C:\Users\Kusuma\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.4\jackson-annotations-2.15.4.jar;C:\Users\Kusuma\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.4\jackson-core-2.15.4.jar;C:\Users\Kusuma\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.4\jackson-datatype-jdk8-2.15.4.jar;C:\Users\Kusuma\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.4\jackson-datatype-jsr310-2.15.4.jar;C:\Users\Kusuma\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.4\jackson-module-parameter-names-2.15.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.2.4\spring-boot-starter-tomcat-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.19\tomcat-embed-core-10.1.19.jar;C:\Users\Kusuma\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.19\tomcat-embed-websocket-10.1.19.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-web\6.1.5\spring-web-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-beans\6.1.5\spring-beans-6.1.5.jar;C:\Users\Kusuma\.m2\repository\io\micrometer\micrometer-observation\1.12.4\micrometer-observation-1.12.4.jar;C:\Users\Kusuma\.m2\repository\io\micrometer\micrometer-commons\1.12.4\micrometer-commons-1.12.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-webmvc\6.1.5\spring-webmvc-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-context\6.1.5\spring-context-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-expression\6.1.5\spring-expression-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.2.4\spring-boot-starter-data-jpa-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.2.4\spring-boot-starter-aop-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\aspectj\aspectjweaver\1.9.21\aspectjweaver-1.9.21.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.2.4\spring-boot-starter-jdbc-3.2.4.jar;C:\Users\Kusuma\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-jdbc\6.1.5\spring-jdbc-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\hibernate\orm\hibernate-core\6.4.4.Final\hibernate-core-6.4.4.Final.jar;C:\Users\Kusuma\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\Kusuma\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\Kusuma\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\Kusuma\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\Kusuma\.m2\repository\io\smallrye\jandex\3.1.2\jandex-3.1.2.jar;C:\Users\Kusuma\.m2\repository\com\fasterxml\classmate\1.6.0\classmate-1.6.0.jar;C:\Users\Kusuma\.m2\repository\net\bytebuddy\byte-buddy\1.14.12\byte-buddy-1.14.12.jar;C:\Users\Kusuma\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar;C:\Users\Kusuma\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar;C:\Users\Kusuma\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar;C:\Users\Kusuma\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\Kusuma\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\Kusuma\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\Kusuma\.m2\repository\org\springframework\data\spring-data-jpa\3.2.4\spring-data-jpa-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\data\spring-data-commons\3.2.4\spring-data-commons-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-orm\6.1.5\spring-orm-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-tx\6.1.5\spring-tx-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-aspects\6.1.5\spring-aspects-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.2.4\spring-boot-starter-security-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-aop\6.1.5\spring-aop-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\springframework\security\spring-security-config\6.2.3\spring-security-config-6.2.3.jar;C:\Users\Kusuma\.m2\repository\org\springframework\security\spring-security-web\6.2.3\spring-security-web-6.2.3.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-thymeleaf\3.2.4\spring-boot-starter-thymeleaf-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\thymeleaf\thymeleaf-spring6\3.1.2.RELEASE\thymeleaf-spring6-3.1.2.RELEASE.jar;C:\Users\Kusuma\.m2\repository\org\thymeleaf\thymeleaf\3.1.2.RELEASE\thymeleaf-3.1.2.RELEASE.jar;C:\Users\Kusuma\.m2\repository\org\attoparser\attoparser\2.0.7.RELEASE\attoparser-2.0.7.RELEASE.jar;C:\Users\Kusuma\.m2\repository\org\unbescape\unbescape\1.1.6.RELEASE\unbescape-1.1.6.RELEASE.jar;C:\Users\Kusuma\.m2\repository\org\thymeleaf\extras\thymeleaf-extras-springsecurity6\3.1.2.RELEASE\thymeleaf-extras-springsecurity6-3.1.2.RELEASE.jar;C:\Users\Kusuma\.m2\repository\org\slf4j\slf4j-api\2.0.12\slf4j-api-2.0.12.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.2.4\spring-boot-starter-validation-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.19\tomcat-embed-el-10.1.19.jar;C:\Users\Kusuma\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\Kusuma\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\Kusuma\.m2\repository\com\h2database\h2\2.2.224\h2-2.2.224.jar;C:\Users\Kusuma\.m2\repository\org\projectlombok\lombok\1.18.30\lombok-1.18.30.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-devtools\3.2.4\spring-boot-devtools-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot\3.2.4\spring-boot-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.2.4\spring-boot-autoconfigure-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-mail\3.2.4\spring-boot-starter-mail-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-context-support\6.1.5\spring-context-support-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\eclipse\angus\jakarta.mail\2.0.3\jakarta.mail-2.0.3.jar;C:\Users\Kusuma\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\Kusuma\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar;C:\Users\Kusuma\.m2\repository\com\github\librepdf\openpdf\1.3.39\openpdf-1.3.39.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.2.4\spring-boot-starter-test-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-test\3.2.4\spring-boot-test-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.2.4\spring-boot-test-autoconfigure-3.2.4.jar;C:\Users\Kusuma\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\Kusuma\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\Kusuma\.m2\repository\net\minidev\json-smart\2.5.0\json-smart-2.5.0.jar;C:\Users\Kusuma\.m2\repository\net\minidev\accessors-smart\2.5.0\accessors-smart-2.5.0.jar;C:\Users\Kusuma\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\Kusuma\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\Kusuma\.m2\repository\org\awaitility\awaitility\4.2.0\awaitility-4.2.0.jar;C:\Users\Kusuma\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\Kusuma\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\Kusuma\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\Kusuma\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Kusuma\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\Kusuma\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Kusuma\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\Kusuma\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\Kusuma\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\Kusuma\.m2\repository\org\mockito\mockito-core\5.7.0\mockito-core-5.7.0.jar;C:\Users\Kusuma\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.12\byte-buddy-agent-1.14.12.jar;C:\Users\Kusuma\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\Kusuma\.m2\repository\org\mockito\mockito-junit-jupiter\5.7.0\mockito-junit-jupiter-5.7.0.jar;C:\Users\Kusuma\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\Kusuma\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-core\6.1.5\spring-core-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-jcl\6.1.5\spring-jcl-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-test\6.1.5\spring-test-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\Kusuma\.m2\repository\org\springframework\security\spring-security-test\6.2.3\spring-security-test-6.2.3.jar;C:\Users\Kusuma\.m2\repository\org\springframework\security\spring-security-core\6.2.3\spring-security-core-6.2.3.jar;C:\Users\Kusuma\.m2\repository\org\springframework\security\spring-security-crypto\6.2.3\spring-security-crypto-6.2.3.jar;"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.18.8-hotspot\bin"/>
+    <property name="sun.java.command" value="C:\Users\Kusuma\AppData\Local\Temp\surefire10802389560188452970\surefirebooter-20260501115936517_3.jar C:\Users\Kusuma\AppData\Local\Temp\surefire10802389560188452970 2026-05-01T11-59-36_333-jvmRun1 surefire-20260501115936517_1tmp surefire_0-20260501115936517_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\Kusuma\Downloads\smarteventsystem\target\test-classes;C:\Users\Kusuma\Downloads\smarteventsystem\target\classes;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.2.4\spring-boot-starter-web-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter\3.2.4\spring-boot-starter-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.2.4\spring-boot-starter-logging-3.2.4.jar;C:\Users\Kusuma\.m2\repository\ch\qos\logback\logback-classic\1.4.14\logback-classic-1.4.14.jar;C:\Users\Kusuma\.m2\repository\ch\qos\logback\logback-core\1.4.14\logback-core-1.4.14.jar;C:\Users\Kusuma\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.21.1\log4j-to-slf4j-2.21.1.jar;C:\Users\Kusuma\.m2\repository\org\apache\logging\log4j\log4j-api\2.21.1\log4j-api-2.21.1.jar;C:\Users\Kusuma\.m2\repository\org\slf4j\jul-to-slf4j\2.0.12\jul-to-slf4j-2.0.12.jar;C:\Users\Kusuma\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\Kusuma\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.2.4\spring-boot-starter-json-3.2.4.jar;C:\Users\Kusuma\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.4\jackson-databind-2.15.4.jar;C:\Users\Kusuma\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.4\jackson-annotations-2.15.4.jar;C:\Users\Kusuma\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.4\jackson-core-2.15.4.jar;C:\Users\Kusuma\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.4\jackson-datatype-jdk8-2.15.4.jar;C:\Users\Kusuma\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.4\jackson-datatype-jsr310-2.15.4.jar;C:\Users\Kusuma\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.4\jackson-module-parameter-names-2.15.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.2.4\spring-boot-starter-tomcat-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.19\tomcat-embed-core-10.1.19.jar;C:\Users\Kusuma\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.19\tomcat-embed-websocket-10.1.19.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-web\6.1.5\spring-web-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-beans\6.1.5\spring-beans-6.1.5.jar;C:\Users\Kusuma\.m2\repository\io\micrometer\micrometer-observation\1.12.4\micrometer-observation-1.12.4.jar;C:\Users\Kusuma\.m2\repository\io\micrometer\micrometer-commons\1.12.4\micrometer-commons-1.12.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-webmvc\6.1.5\spring-webmvc-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-context\6.1.5\spring-context-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-expression\6.1.5\spring-expression-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.2.4\spring-boot-starter-data-jpa-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.2.4\spring-boot-starter-aop-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\aspectj\aspectjweaver\1.9.21\aspectjweaver-1.9.21.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.2.4\spring-boot-starter-jdbc-3.2.4.jar;C:\Users\Kusuma\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-jdbc\6.1.5\spring-jdbc-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\hibernate\orm\hibernate-core\6.4.4.Final\hibernate-core-6.4.4.Final.jar;C:\Users\Kusuma\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\Kusuma\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\Kusuma\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\Kusuma\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\Kusuma\.m2\repository\io\smallrye\jandex\3.1.2\jandex-3.1.2.jar;C:\Users\Kusuma\.m2\repository\com\fasterxml\classmate\1.6.0\classmate-1.6.0.jar;C:\Users\Kusuma\.m2\repository\net\bytebuddy\byte-buddy\1.14.12\byte-buddy-1.14.12.jar;C:\Users\Kusuma\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar;C:\Users\Kusuma\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar;C:\Users\Kusuma\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar;C:\Users\Kusuma\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\Kusuma\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\Kusuma\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\Kusuma\.m2\repository\org\springframework\data\spring-data-jpa\3.2.4\spring-data-jpa-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\data\spring-data-commons\3.2.4\spring-data-commons-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-orm\6.1.5\spring-orm-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-tx\6.1.5\spring-tx-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-aspects\6.1.5\spring-aspects-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.2.4\spring-boot-starter-security-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-aop\6.1.5\spring-aop-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\springframework\security\spring-security-config\6.2.3\spring-security-config-6.2.3.jar;C:\Users\Kusuma\.m2\repository\org\springframework\security\spring-security-web\6.2.3\spring-security-web-6.2.3.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-thymeleaf\3.2.4\spring-boot-starter-thymeleaf-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\thymeleaf\thymeleaf-spring6\3.1.2.RELEASE\thymeleaf-spring6-3.1.2.RELEASE.jar;C:\Users\Kusuma\.m2\repository\org\thymeleaf\thymeleaf\3.1.2.RELEASE\thymeleaf-3.1.2.RELEASE.jar;C:\Users\Kusuma\.m2\repository\org\attoparser\attoparser\2.0.7.RELEASE\attoparser-2.0.7.RELEASE.jar;C:\Users\Kusuma\.m2\repository\org\unbescape\unbescape\1.1.6.RELEASE\unbescape-1.1.6.RELEASE.jar;C:\Users\Kusuma\.m2\repository\org\thymeleaf\extras\thymeleaf-extras-springsecurity6\3.1.2.RELEASE\thymeleaf-extras-springsecurity6-3.1.2.RELEASE.jar;C:\Users\Kusuma\.m2\repository\org\slf4j\slf4j-api\2.0.12\slf4j-api-2.0.12.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.2.4\spring-boot-starter-validation-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.19\tomcat-embed-el-10.1.19.jar;C:\Users\Kusuma\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\Kusuma\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\Kusuma\.m2\repository\com\h2database\h2\2.2.224\h2-2.2.224.jar;C:\Users\Kusuma\.m2\repository\org\projectlombok\lombok\1.18.30\lombok-1.18.30.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-devtools\3.2.4\spring-boot-devtools-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot\3.2.4\spring-boot-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.2.4\spring-boot-autoconfigure-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-mail\3.2.4\spring-boot-starter-mail-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-context-support\6.1.5\spring-context-support-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\eclipse\angus\jakarta.mail\2.0.3\jakarta.mail-2.0.3.jar;C:\Users\Kusuma\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\Kusuma\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar;C:\Users\Kusuma\.m2\repository\com\github\librepdf\openpdf\1.3.39\openpdf-1.3.39.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.2.4\spring-boot-starter-test-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-test\3.2.4\spring-boot-test-3.2.4.jar;C:\Users\Kusuma\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.2.4\spring-boot-test-autoconfigure-3.2.4.jar;C:\Users\Kusuma\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\Kusuma\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\Kusuma\.m2\repository\net\minidev\json-smart\2.5.0\json-smart-2.5.0.jar;C:\Users\Kusuma\.m2\repository\net\minidev\accessors-smart\2.5.0\accessors-smart-2.5.0.jar;C:\Users\Kusuma\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\Kusuma\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\Kusuma\.m2\repository\org\awaitility\awaitility\4.2.0\awaitility-4.2.0.jar;C:\Users\Kusuma\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\Kusuma\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\Kusuma\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\Kusuma\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Kusuma\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\Kusuma\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Kusuma\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\Kusuma\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\Kusuma\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\Kusuma\.m2\repository\org\mockito\mockito-core\5.7.0\mockito-core-5.7.0.jar;C:\Users\Kusuma\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.12\byte-buddy-agent-1.14.12.jar;C:\Users\Kusuma\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\Kusuma\.m2\repository\org\mockito\mockito-junit-jupiter\5.7.0\mockito-junit-jupiter-5.7.0.jar;C:\Users\Kusuma\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\Kusuma\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-core\6.1.5\spring-core-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-jcl\6.1.5\spring-jcl-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\springframework\spring-test\6.1.5\spring-test-6.1.5.jar;C:\Users\Kusuma\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\Kusuma\.m2\repository\org\springframework\security\spring-security-test\6.2.3\spring-security-test-6.2.3.jar;C:\Users\Kusuma\.m2\repository\org\springframework\security\spring-security-core\6.2.3\spring-security-core-6.2.3.jar;C:\Users\Kusuma\.m2\repository\org\springframework\security\spring-security-crypto\6.2.3\spring-security-crypto-6.2.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Kusuma"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-01-20"/>
+    <property name="java.home" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.18.8-hotspot"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\Kusuma\Downloads\smarteventsystem"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="windows-1252"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="C:\Users\Kusuma\AppData\Local\Temp\surefire10802389560188452970\surefirebooter-20260501115936517_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.18+8"/>
+    <property name="user.name" value="kusuma"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.18+8"/>
+    <property name="localRepository" value="C:\Users\Kusuma\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="C:\Users\Kusuma\AppData\Local\Temp\"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="java.version" value="17.0.18"/>
+    <property name="user.dir" value="C:\Users\Kusuma\Downloads\smarteventsystem"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="23232"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="CONSOLE_LOG_CHARSET" value="windows-1252"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.18.8-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;c:\Users\Kusuma\AppData\Local\Programs\cursor\resources\app\resources\helpers;C:\Program Files\Eclipse Adoptium\jdk-17.0.18.8-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\Kusuma\AppData\Local\Android\Sdk\platform-tools;C:\Users\Kusuma\AppData\Local\Android\Sdk\tools;C:\Program Files\Microsoft SQL Server\170\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\180\Tools\Binn\;C:\Program Files\Eclipse Adoptium\jdk-17.0.18.8-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\Kusuma\AppData\Local\Android\Sdk\platform-tools;C:\Users\Kusuma\AppData\Local\Android\Sdk\tools;C:\Program Files\Microsoft SQL Server\170\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\180\Tools\Binn\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\Kusuma\AppData\Local\Android\Sdk\platform-tools;C:\Users\Kusuma\AppData\Local\Android\Sdk\tools;C:\Program Files\Microsoft SQL Server\170\DTS\Binn\;C:\Pro;C:\Users\Kusuma\AppData\Local\Programs\Antigravity\bin;C:\Users\Kusuma\AppData\Local\Programs\cursor\resources\app\bin;C:\Users\Kusuma\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Kusuma\AppData\Local\Python\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.18+8"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[Smart Campus Event Management System] "/>
+  </properties>
+  <testcase name="testAdminDashboard" classname="com.smartcampus.events.DashboardTest" time="1.083">
+    <system-out><![CDATA[11:59:37.394 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.smartcampus.events.DashboardTest]: DashboardTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:59:37.533 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.smartcampus.events.SmartEventsApplication for test class com.smartcampus.events.DashboardTest
+11:59:37.750 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.4)
+
+2026-05-01T11:59:38.100+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] com.smartcampus.events.DashboardTest     : Starting DashboardTest using Java 17.0.18 with PID 23232 (started by kusuma in C:\Users\Kusuma\Downloads\smarteventsystem)
+2026-05-01T11:59:38.100+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] com.smartcampus.events.DashboardTest     : No active profile set, falling back to 1 default profile: "default"
+2026-05-01T11:59:39.216+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-01T11:59:39.300+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 7 JPA repository interfaces.
+2026-05-01T11:59:40.067+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-01T11:59:40.133+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-05-01T11:59:40.187+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-01T11:59:40.550+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-01T11:59:40.588+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-01T11:59:40.767+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:smartcampusdb user=SA
+2026-05-01T11:59:40.767+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-01T11:59:40.784+05:30  WARN 23232 --- [Smart Campus Event Management System] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-01T11:59:41.667+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-01T11:59:41.717+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-01T11:59:42.267+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-01T11:59:43.651+05:30  WARN 23232 --- [Smart Campus Event Management System] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-01T11:59:44.821+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:smartcampusdb'
+2026-05-01T11:59:44.973+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-05-01T11:59:44.973+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-05-01T11:59:44.981+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 8 ms
+2026-05-01T11:59:45.033+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] com.smartcampus.events.DashboardTest     : Started DashboardTest in 7.3 seconds (process running for 8.399)
+2026-05-01T11:59:45.433+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] c.s.events.config.DataInitializer        : Default admin created: admin@campus.edu / admin123
+2026-05-01T11:59:45.517+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] c.s.events.config.DataInitializer        : Demo student created: student@campus.edu / student123
+2026-05-01T11:59:45.517+05:30  INFO 23232 --- [Smart Campus Event Management System] [           main] c.s.events.config.DataInitializer        : Sample events created successfully.
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /admin/dashboard
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository.CSRF_TOKEN=org.springframework.security.web.csrf.DefaultCsrfToken@1459ffe4, SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=admin@campus.edu, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_ADMIN]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_ADMIN]]]}
+
+Handler:
+             Type = com.smartcampus.events.controller.AdminController
+           Method = com.smartcampus.events.controller.AdminController#dashboard(UserDetails, Model)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = admin/dashboard
+             View = null
+        Attribute = admin
+            value = User(id=1, name=System Admin, email=admin@campus.edu, username=admin, password=$2a$10$7XFGZ8osJdPX.YUXRI6Zt.GXHCjwCKJQzRa0oub0pPN5c94xjxWwC, role=ADMIN, department=CSE, phone=9999999999, createdAt=2026-05-01T11:59:45.383759)
+           errors = []
+        Attribute = totalEvents
+            value = 5
+        Attribute = totalRegistrations
+            value = 0
+        Attribute = announcements
+            value = []
+        Attribute = recentEvents
+            value = [Event(id=4, title=Robotics Design Challenge, description=Teams design and build autonomous robots to complete obstacle courses. Cash prizes for top 3 teams., department=MECH, eventType=Competition, venue=Mechanical Workshop, timing=null, startDate=2026-05-21, endDate=2026-05-22, lastDateToApply=2026-05-16, seatLimit=80, minTeamSize=1, maxTeamSize=1, registeredCount=0, createdAt=2026-05-01T11:59:45.517160, updatedAt=null), Event(id=1, title=National CodeSprint 2026, description=A 48-hour competitive programming marathon open to all engineering students. Solve algorithmic challenges and win prizes., department=CSE, eventType=Technical, venue=CS Lab Block A, timing=null, startDate=2026-05-11, endDate=2026-05-13, lastDateToApply=2026-05-08, seatLimit=150, minTeamSize=1, maxTeamSize=1, registeredCount=0, createdAt=2026-05-01T11:59:45.517160, updatedAt=null), Event(id=2, title=IoT & Embedded Systems Workshop, description=Hands-on workshop on building IoT devices using Raspberry Pi and Arduino with real-world sensor integration., department=ECE, eventType=Workshop, venue=ECE Innovation Hub, timing=null, startDate=2026-05-06, endDate=2026-05-07, lastDateToApply=2026-05-04, seatLimit=60, minTeamSize=1, maxTeamSize=1, registeredCount=0, createdAt=2026-05-01T11:59:45.517160, updatedAt=null), Event(id=3, title=Green Energy Symposium, description=A seminar on renewable energy trends, solar panel tech, and sustainable engineering practices., department=EEE, eventType=Seminar, venue=Seminar Hall 2, timing=null, startDate=2026-04-29, endDate=2026-05-02, lastDateToApply=2026-04-26, seatLimit=200, minTeamSize=1, maxTeamSize=1, registeredCount=0, createdAt=2026-05-01T11:59:45.517160, updatedAt=null), Event(id=5, title=AI in Healthcare – Guest Lecture, description=Industry experts discuss the role of machine learning and AI models in diagnostics, imaging, and patient care., department=IT, eventType=Guest Lecture, venue=Auditorium, timing=null, startDate=2026-04-21, endDate=2026-04-21, lastDateToApply=2026-04-19, seatLimit=300, minTeamSize=1, maxTeamSize=1, registeredCount=0, createdAt=2026-05-01T11:59:45.517160, updatedAt=null)]
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Language:"en", Content-Type:"text/html;charset=UTF-8", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"SAMEORIGIN"]
+     Content type = text/html;charset=UTF-8
+             Body = <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | Smart Campus</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body class="dashboard-body">
+
+    <nav class="sidebar">
+        <div class="sidebar-brand">
+            <i class="fas fa-university"></i>
+            <span>SmartCampus</span>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="/admin/dashboard">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="/admin/events">
+                    <i class="fas fa-calendar-alt"></i> Events
+                </a>
+            </li>
+            <li>
+                <a href="/admin/registrations">
+                    <i class="fas fa-users"></i> Registrations
+                </a>
+            </li>
+            <li>
+                <a href="/admin/analytics">
+                    <i class="fas fa-chart-bar"></i> Analytics
+                </a>
+            </li>
+            <li>
+                <a href="/admin/announcements">
+                    <i class="fas fa-bullhorn"></i> Announcements
+                </a>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <i class="fas fa-user-shield"></i>
+                <div>
+                    <span class="user-name">System Admin</span>
+                    <span class="user-role">Administrator</span>
+                </div>
+            </div>
+            <a href="/logout" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1>Admin Dashboard</h1>
+                <p class="page-subtitle">Welcome back, <span>System Admin</span>! Here's your overview.
+                </p>
+            </div>
+            <a href="/admin/events/new" class="btn-primary">
+                <i class="fas fa-plus"></i> New Event
+            </a>
+        </div>
+
+        <div>
+        
+        
+    </div>
+
+        <!-- Stats Row -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="stat-info">
+                    <h3>5</h3>
+                    <p>Total Events</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-user-check"></i></div>
+                <div class="stat-info">
+                    <h3>0</h3>
+                    <p>Total Registrations</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-bullhorn"></i></div>
+                <div class="stat-info">
+                    <h3>0</h3>
+                    <p>Announcements</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Recent Events Table -->
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-calendar-alt"></i> Recent Events</h2>
+                    <a href="/admin/events" class="link-more">Manage All <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Department</th>
+                            <th>Status</th>
+                            <th>Seats</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Robotics Design Challenge</td>
+                            <td><span class="dept-badge sm">MECH</span></td>
+                            <td>
+                                <span class="status-badge status-upcoming">UPCOMING</span>
+                            </td>
+                            <td>0/80</td>
+                            <td class="action-btns">
+                                <a href="/admin/events/4/edit" class="btn-edit-sm"><i
+                                        class="fas fa-edit"></i></a>
+                                <form action="/admin/events/4/delete" method="post"
+                                    style="display:inline" onsubmit="return confirm('Delete this event?')"><input type="hidden" name="_csrf" value="uAwXlHlGp06pcnf03v9yEPggG-Pp-WINENYok9m4jL2k06i6gG8jrR1ylHiERkKSvdJGJ8gUNtvYmlEgIuIf9ezc7oyWts6K"/>
+                                    <input type="hidden" name="_csrf" value="uAwXlHlGp06pcnf03v9yEPggG-Pp-WINENYok9m4jL2k06i6gG8jrR1ylHiERkKSvdJGJ8gUNtvYmlEgIuIf9ezc7oyWts6K" />
+                                    <button type="submit" class="btn-danger-sm"><i class="fas fa-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>National CodeSprint 2026</td>
+                            <td><span class="dept-badge sm">CSE</span></td>
+                            <td>
+                                <span class="status-badge status-upcoming">UPCOMING</span>
+                            </td>
+                            <td>0/150</td>
+                            <td class="action-btns">
+                                <a href="/admin/events/1/edit" class="btn-edit-sm"><i
+                                        class="fas fa-edit"></i></a>
+                                <form action="/admin/events/1/delete" method="post"
+                                    style="display:inline" onsubmit="return confirm('Delete this event?')"><input type="hidden" name="_csrf" value="uAwXlHlGp06pcnf03v9yEPggG-Pp-WINENYok9m4jL2k06i6gG8jrR1ylHiERkKSvdJGJ8gUNtvYmlEgIuIf9ezc7oyWts6K"/>
+                                    <input type="hidden" name="_csrf" value="uAwXlHlGp06pcnf03v9yEPggG-Pp-WINENYok9m4jL2k06i6gG8jrR1ylHiERkKSvdJGJ8gUNtvYmlEgIuIf9ezc7oyWts6K" />
+                                    <button type="submit" class="btn-danger-sm"><i class="fas fa-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>IoT &amp; Embedded Systems Workshop</td>
+                            <td><span class="dept-badge sm">ECE</span></td>
+                            <td>
+                                <span class="status-badge status-upcoming">UPCOMING</span>
+                            </td>
+                            <td>0/60</td>
+                            <td class="action-btns">
+                                <a href="/admin/events/2/edit" class="btn-edit-sm"><i
+                                        class="fas fa-edit"></i></a>
+                                <form action="/admin/events/2/delete" method="post"
+                                    style="display:inline" onsubmit="return confirm('Delete this event?')"><input type="hidden" name="_csrf" value="uAwXlHlGp06pcnf03v9yEPggG-Pp-WINENYok9m4jL2k06i6gG8jrR1ylHiERkKSvdJGJ8gUNtvYmlEgIuIf9ezc7oyWts6K"/>
+                                    <input type="hidden" name="_csrf" value="uAwXlHlGp06pcnf03v9yEPggG-Pp-WINENYok9m4jL2k06i6gG8jrR1ylHiERkKSvdJGJ8gUNtvYmlEgIuIf9ezc7oyWts6K" />
+                                    <button type="submit" class="btn-danger-sm"><i class="fas fa-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Green Energy Symposium</td>
+                            <td><span class="dept-badge sm">EEE</span></td>
+                            <td>
+                                <span class="status-badge status-ongoing">ONGOING</span>
+                            </td>
+                            <td>0/200</td>
+                            <td class="action-btns">
+                                <a href="/admin/events/3/edit" class="btn-edit-sm"><i
+                                        class="fas fa-edit"></i></a>
+                                <form action="/admin/events/3/delete" method="post"
+                                    style="display:inline" onsubmit="return confirm('Delete this event?')"><input type="hidden" name="_csrf" value="uAwXlHlGp06pcnf03v9yEPggG-Pp-WINENYok9m4jL2k06i6gG8jrR1ylHiERkKSvdJGJ8gUNtvYmlEgIuIf9ezc7oyWts6K"/>
+                                    <input type="hidden" name="_csrf" value="uAwXlHlGp06pcnf03v9yEPggG-Pp-WINENYok9m4jL2k06i6gG8jrR1ylHiERkKSvdJGJ8gUNtvYmlEgIuIf9ezc7oyWts6K" />
+                                    <button type="submit" class="btn-danger-sm"><i class="fas fa-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>AI in Healthcare – Guest Lecture</td>
+                            <td><span class="dept-badge sm">IT</span></td>
+                            <td>
+                                <span class="status-badge status-completed">COMPLETED</span>
+                            </td>
+                            <td>0/300</td>
+                            <td class="action-btns">
+                                <a href="/admin/events/5/edit" class="btn-edit-sm"><i
+                                        class="fas fa-edit"></i></a>
+                                <form action="/admin/events/5/delete" method="post"
+                                    style="display:inline" onsubmit="return confirm('Delete this event?')"><input type="hidden" name="_csrf" value="uAwXlHlGp06pcnf03v9yEPggG-Pp-WINENYok9m4jL2k06i6gG8jrR1ylHiERkKSvdJGJ8gUNtvYmlEgIuIf9ezc7oyWts6K"/>
+                                    <input type="hidden" name="_csrf" value="uAwXlHlGp06pcnf03v9yEPggG-Pp-WINENYok9m4jL2k06i6gG8jrR1ylHiERkKSvdJGJ8gUNtvYmlEgIuIf9ezc7oyWts6K" />
+                                    <button type="submit" class="btn-danger-sm"><i class="fas fa-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Announcements sidebar -->
+            <div class="dashboard-section side-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-bullhorn"></i> Recent Announcements</h2>
+                    <a href="/admin/announcements" class="link-more">Manage <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="announcement-list">
+                    
+                    <div class="no-content">
+                        <i class="fas fa-bell-slash"></i>
+                        <p>No announcements yet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  </testcase>
+  <testcase name="testStudentDashboard" classname="com.smartcampus.events.DashboardTest" time="0.066">
+    <system-out><![CDATA[
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /student/dashboard
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=student@campus.edu, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_STUDENT]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_STUDENT]]]}
+
+Handler:
+             Type = com.smartcampus.events.controller.StudentController
+           Method = com.smartcampus.events.controller.StudentController#dashboard(UserDetails, Model)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = student/dashboard
+             View = null
+        Attribute = student
+            value = User(id=2, name=Demo Student, email=student@campus.edu, username=demo.student, password=$2a$10$aeoHCi4RDbcNwhU5VlQH1uwTUzuBn6a9GRGyC4fIdtJq44SkMPgQm, role=STUDENT, department=CSE, phone=8888888888, createdAt=2026-05-01T11:59:45.517160)
+           errors = []
+        Attribute = events
+            value = [Event(id=4, title=Robotics Design Challenge, description=Teams design and build autonomous robots to complete obstacle courses. Cash prizes for top 3 teams., department=MECH, eventType=Competition, venue=Mechanical Workshop, timing=null, startDate=2026-05-21, endDate=2026-05-22, lastDateToApply=2026-05-16, seatLimit=80, minTeamSize=1, maxTeamSize=1, registeredCount=0, createdAt=2026-05-01T11:59:45.517160, updatedAt=null), Event(id=1, title=National CodeSprint 2026, description=A 48-hour competitive programming marathon open to all engineering students. Solve algorithmic challenges and win prizes., department=CSE, eventType=Technical, venue=CS Lab Block A, timing=null, startDate=2026-05-11, endDate=2026-05-13, lastDateToApply=2026-05-08, seatLimit=150, minTeamSize=1, maxTeamSize=1, registeredCount=0, createdAt=2026-05-01T11:59:45.517160, updatedAt=null), Event(id=2, title=IoT & Embedded Systems Workshop, description=Hands-on workshop on building IoT devices using Raspberry Pi and Arduino with real-world sensor integration., department=ECE, eventType=Workshop, venue=ECE Innovation Hub, timing=null, startDate=2026-05-06, endDate=2026-05-07, lastDateToApply=2026-05-04, seatLimit=60, minTeamSize=1, maxTeamSize=1, registeredCount=0, createdAt=2026-05-01T11:59:45.517160, updatedAt=null), Event(id=3, title=Green Energy Symposium, description=A seminar on renewable energy trends, solar panel tech, and sustainable engineering practices., department=EEE, eventType=Seminar, venue=Seminar Hall 2, timing=null, startDate=2026-04-29, endDate=2026-05-02, lastDateToApply=2026-04-26, seatLimit=200, minTeamSize=1, maxTeamSize=1, registeredCount=0, createdAt=2026-05-01T11:59:45.517160, updatedAt=null), Event(id=5, title=AI in Healthcare – Guest Lecture, description=Industry experts discuss the role of machine learning and AI models in diagnostics, imaging, and patient care., department=IT, eventType=Guest Lecture, venue=Auditorium, timing=null, startDate=2026-04-21, endDate=2026-04-21, lastDateToApply=2026-04-19, seatLimit=300, minTeamSize=1, maxTeamSize=1, registeredCount=0, createdAt=2026-05-01T11:59:45.517160, updatedAt=null)]
+        Attribute = myRegistrations
+            value = []
+        Attribute = announcements
+            value = []
+        Attribute = totalEvents
+            value = 5
+        Attribute = myRegCount
+            value = 0
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Language:"en", Content-Type:"text/html;charset=UTF-8", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"SAMEORIGIN"]
+     Content type = text/html;charset=UTF-8
+             Body = <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard | Smart Campus</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body class="dashboard-body">
+
+    <nav class="sidebar">
+        <div class="sidebar-brand">
+            <i class="fas fa-university"></i>
+            <span>SmartCampus</span>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="/student/dashboard">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="/student/events">
+                    <i class="fas fa-calendar-alt"></i> Browse Events
+                </a>
+            </li>
+            <li>
+                <a href="/student/calendar">
+                    <i class="fas fa-calendar-week"></i> Calendar View
+                </a>
+            </li>
+            <li>
+                <a href="/student/saved-events">
+                    <i class="fas fa-bookmark"></i> Saved Events
+                </a>
+            </li>
+            <li>
+                <a href="/student/my-registrations">
+                    <i class="fas fa-ticket-alt"></i> My Registrations
+                </a>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <i class="fas fa-user-graduate"></i>
+                <div>
+                    <span class="user-name">Demo Student</span>
+                    <span class="user-role">CSE</span>
+                </div>
+            </div>
+            <a href="/logout" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1>Welcome back, <span>Demo Student</span>! ?</h1>
+                <p class="page-subtitle">Here's what's happening on campus today.</p>
+            </div>
+            <a href="/student/events" class="btn-primary">
+                <i class="fas fa-search"></i> Browse All Events
+            </a>
+        </div>
+
+        <div>
+        
+        
+    </div>
+
+        <!-- Stats Row -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="stat-info">
+                    <h3>5</h3>
+                    <p>Total Events</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-ticket-alt"></i></div>
+                <div class="stat-info">
+                    <h3>0</h3>
+                    <p>My Registrations</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-building"></i></div>
+                <div class="stat-info">
+                    <h3>CSE</h3>
+                    <p>Department</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Latest Events -->
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-calendar-alt"></i> Latest Events</h2>
+                    <a href="/student/events" class="link-more">View All <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="event-cards-grid">
+                    <div class="event-card">
+                        <div class="event-card-top">
+                            <span class="dept-badge">MECH</span>
+                            <span class="status-badge status-upcoming">UPCOMING</span>
+                        </div>
+                        <h3 class="event-title">Robotics Design Challenge</h3>
+                        <div class="event-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> <span>Mechanical Workshop</span></span>
+                            <span><i class="fas fa-calendar"></i> <span>21 May 2026</span></span>
+                            <span><i class="fas fa-users"></i> <span>0/80</span>
+                                seats</span>
+                        </div>
+                        <div class="event-reg-status">
+                            <span class="reg-open"><i class="fas fa-circle"></i>
+                                Registration Open</span>
+                            
+                        </div>
+                        <a href="/student/events/4" class="btn-card">View Details</a>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-card-top">
+                            <span class="dept-badge">CSE</span>
+                            <span class="status-badge status-upcoming">UPCOMING</span>
+                        </div>
+                        <h3 class="event-title">National CodeSprint 2026</h3>
+                        <div class="event-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> <span>CS Lab Block A</span></span>
+                            <span><i class="fas fa-calendar"></i> <span>11 May 2026</span></span>
+                            <span><i class="fas fa-users"></i> <span>0/150</span>
+                                seats</span>
+                        </div>
+                        <div class="event-reg-status">
+                            <span class="reg-open"><i class="fas fa-circle"></i>
+                                Registration Open</span>
+                            
+                        </div>
+                        <a href="/student/events/1" class="btn-card">View Details</a>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-card-top">
+                            <span class="dept-badge">ECE</span>
+                            <span class="status-badge status-upcoming">UPCOMING</span>
+                        </div>
+                        <h3 class="event-title">IoT &amp; Embedded Systems Workshop</h3>
+                        <div class="event-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> <span>ECE Innovation Hub</span></span>
+                            <span><i class="fas fa-calendar"></i> <span>06 May 2026</span></span>
+                            <span><i class="fas fa-users"></i> <span>0/60</span>
+                                seats</span>
+                        </div>
+                        <div class="event-reg-status">
+                            <span class="reg-open"><i class="fas fa-circle"></i>
+                                Registration Open</span>
+                            
+                        </div>
+                        <a href="/student/events/2" class="btn-card">View Details</a>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-card-top">
+                            <span class="dept-badge">EEE</span>
+                            <span class="status-badge status-ongoing">ONGOING</span>
+                        </div>
+                        <h3 class="event-title">Green Energy Symposium</h3>
+                        <div class="event-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> <span>Seminar Hall 2</span></span>
+                            <span><i class="fas fa-calendar"></i> <span>29 Apr 2026</span></span>
+                            <span><i class="fas fa-users"></i> <span>0/200</span>
+                                seats</span>
+                        </div>
+                        <div class="event-reg-status">
+                            
+                            <span class="reg-closed"><i class="fas fa-circle"></i>
+                                Registration Closed</span>
+                        </div>
+                        <a href="/student/events/3" class="btn-card">View Details</a>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-card-top">
+                            <span class="dept-badge">IT</span>
+                            <span class="status-badge status-completed">COMPLETED</span>
+                        </div>
+                        <h3 class="event-title">AI in Healthcare – Guest Lecture</h3>
+                        <div class="event-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> <span>Auditorium</span></span>
+                            <span><i class="fas fa-calendar"></i> <span>21 Apr 2026</span></span>
+                            <span><i class="fas fa-users"></i> <span>0/300</span>
+                                seats</span>
+                        </div>
+                        <div class="event-reg-status">
+                            
+                            <span class="reg-closed"><i class="fas fa-circle"></i>
+                                Registration Closed</span>
+                        </div>
+                        <a href="/student/events/5" class="btn-card">View Details</a>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Announcements -->
+            <div class="dashboard-section side-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-bullhorn"></i> Announcements</h2>
+                </div>
+                <div class="announcement-list">
+                    
+                    <div class="no-content">
+                        <i class="fas fa-bell-slash"></i>
+                        <p>No announcements yet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  </testcase>
+</testsuite>
